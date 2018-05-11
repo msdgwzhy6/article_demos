@@ -1,13 +1,13 @@
 ext{
     android = [
-            compileSdkVersion: 27,
+            compileSdkVersion: 26,
             minSdkVersion    : 21,
-            targetSdkVersion : 27,
+            targetSdkVersion : 26,
             versionName: "1.0.0"
     ]
     dependencies = [
-            appcompatV7 : 'com.android.support:appcompat-v7:27.1.1',
-            design      : 'com.android.support:design:27.1.1',
-            constrant :'com.android.support.constraint:constraint-layout:1.0.2'
+            appcompatV7 : 'com.android.support:appcompat-v7:26.1.0',
+            design      : 'com.android.support:design:26.1.0',
+            constrant :'com.android.support.constraint:constraint-layout:1.1.0'
     ]
 }

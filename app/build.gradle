@@ -50,11 +50,11 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.signConfig
-            buildConfigField "boolean","isRelease","true"
+            buildConfigField "boolean", "isRelease", "true"
             zipAlignEnabled true
             shrinkResources true
             manifestPlaceholders = [
-                    APP_NAME           : "release"
+                    APP_NAME: "release"
             ]
         }
 
@@ -62,12 +62,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.signConfig
-            buildConfigField "boolean","isRelease","false"
+            buildConfigField "boolean", "isRelease", "false"
             applicationIdSuffix 'debug'
             zipAlignEnabled false
             shrinkResources false
             manifestPlaceholders = [
-                    APP_NAME           : "debug"
+                    APP_NAME: "debug"
             ]
 
         }
@@ -80,6 +80,7 @@ android {
         }
     }
 }
+
 def getTime() {
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
@@ -98,12 +99,13 @@ def getCode() {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation rootProject.ext.dependencies.appcompatV7
-    implementation rootProject.ext.dependencies.constrant
-    implementation rootProject.ext.dependencies.design
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(path: ':main_module')
 
+    if (IsBuildApp.toBoolean()) {
+        implementation project(':commonlibrary')
+    } else {
+        implementation project(':androidmodule')
+        implementation project(':vuemodule')
+        implementation project(':kotlinmodule')
+        implementation project(':javamodule')
+    }
 }

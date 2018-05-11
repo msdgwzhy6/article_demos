@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.article.demos.android">
+
+    <application android:theme="@style/AppTheme">
+
+        <activity android:name=".ui.AndroidActivity"/>
+
+    </application>
+
+</manifest>
