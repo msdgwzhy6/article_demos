@@ -1,14 +1,14 @@
 package com.article.demos;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
+
+import com.article.demos.common.base.BaseActivity;
 
 /**
  * @author a
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 
     @Override
@@ -17,13 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
     }
-
-    public void clickConfig(View view) {
-
-        Toast.makeText(view.getContext(), BuildConfig.isRelease + "", Toast.LENGTH_SHORT).show();
-
-
+    public void bt(View view){
 
     }
 }
