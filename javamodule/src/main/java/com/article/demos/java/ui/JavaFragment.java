@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.article.demos.common.base.BaseFragment;
 import com.article.demos.common.constant.Constant;
+import com.article.demos.java.R;
 
 
 /**
@@ -20,12 +21,7 @@ public class JavaFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        return inflater.inflate(R.layout.fragment_java, container, false);
     }
 
 
