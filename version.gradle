@@ -1,13 +1,14 @@
-ext{
+ext {
     android = [
             compileSdkVersion: 26,
             minSdkVersion    : 21,
             targetSdkVersion : 26,
-            versionName: "1.0.0"
+            versionName      : "1.0.0"
     ]
     dependencies = [
-            appcompatV7 : 'com.android.support:appcompat-v7:26.1.0',
-            design      : 'com.android.support:design:26.1.0',
-            constrant :'com.android.support.constraint:constraint-layout:1.1.0'
+            appcompatV7   : 'com.android.support:appcompat-v7:26.1.0',
+            design        : 'com.android.support:design:26.1.0',
+            constrant     : 'com.android.support.constraint:constraint-layout:1.1.0',
+            arouterCompile: 'com.alibaba:arouter-compiler:1.1.4'
     ]
 }

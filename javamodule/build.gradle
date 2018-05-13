@@ -14,6 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
 
     }
 
@@ -23,6 +28,10 @@ android {
                 manifest.srcFile 'src/main/independent/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+                //release模式下排除independent文件夹中的所有Java文件
+                java {
+                    exclude 'independent/**'
+                }
             }
         }
     }
@@ -50,5 +59,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(':commonlibrary')
-    implementation 'com.android.support:support-v4:26.1.0'
+    annotationProcessor rootProject.ext.dependencies.arouterCompile
 }

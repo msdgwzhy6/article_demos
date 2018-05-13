@@ -6,12 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.article.demos.common.base.BaseFragment;
+import com.article.demos.common.constant.Constant;
 
 
 /**
  * @author a
  */
+@Route(path = Constant.JAVA_PAHT)
 public class JavaFragment extends BaseFragment {
 
     @Nullable
